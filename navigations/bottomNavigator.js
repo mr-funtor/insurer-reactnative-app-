@@ -20,3 +20,4 @@ const MyTabs=()=>{
 }
 
 export default MyTabs;
+//<Tab.Screen name="Inventory" component={ValuableScreen} />
