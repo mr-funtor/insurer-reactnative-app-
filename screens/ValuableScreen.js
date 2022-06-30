@@ -1,8 +1,23 @@
 import { StyleSheet, Text, SafeAreaView, View,Button,FlatList,TouchableHighlight,Image } from 'react-native';
-//import { useSelector, useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 
 const Valuables=({navigation})=>{
-
+    const {value}= useSelector((state) => state.data)
+    console.log(value)
+    
+    const renderValue=({item})=>{
+        const {name, purchasePrice,photo}=item;
+        return(
+            <View style={styles.itemCard}>
+                <View style={styles.imageContainer}>
+                    <Image style={styles.theImage} source={{uri:photo}} />
+                </View>
+                <Text> {name}</Text>
+                <Text> {purchasePrice}</Text>
+            </View>
+            
+        ) 
+    }
     
    return(
     <SafeAreaView >

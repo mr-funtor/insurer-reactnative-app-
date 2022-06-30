@@ -12,7 +12,7 @@ const MyTabs=()=>{
     <Tab.Navigator screenOptions={{headerShown:false}} initialRouteName='Inventory'>
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Insurance" component={InsuranceScreen} />
-      
+      <Tab.Screen name="Inventory" component={ValuableScreen} />
       <Tab.Screen name="Search" component={SearchScreen} />
       <Tab.Screen name="Menu" component={MenuScreen} />
     </Tab.Navigator>
@@ -20,4 +20,3 @@ const MyTabs=()=>{
 }
 
 export default MyTabs;
-//<Tab.Screen name="Inventory" component={ValuableScreen} />
