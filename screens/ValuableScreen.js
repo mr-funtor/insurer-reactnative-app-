@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 
 const Valuables=({navigation})=>{
     const {value}= useSelector((state) => state.data)
-    console.log(value)
+//    console.log(value)
     
     const renderValue=({item})=>{
         const {name, purchasePrice,photo}=item;

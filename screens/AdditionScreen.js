@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { StyleSheet, Text, View, TextInput,Button, Image,TouchableOpacity } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
+import { v4 as uuidv4 } from 'uuid';
+
+//redux
 import { useSelector, useDispatch } from 'react-redux';
 import { addingValuable } from '../redux/features/dataSlice';
-import { v4 as uuidv4 } from 'uuid';
 
 export default function AdditionScreen({navigation}) {
     const [theName, setTheName]=useState('');
@@ -12,6 +14,8 @@ export default function AdditionScreen({navigation}) {
     const [selectedImage, setSelectedImage] = useState(null);
     
     const dispatch= useDispatch();
+    const {value}= useSelector((state) => state.data);
+    
     
     //this ensures the user puts a text and not just space
     const containsValidChars=(str)=>{
@@ -58,10 +62,18 @@ export default function AdditionScreen({navigation}) {
     }
     
     const addItemToState=()=>{
+        //checks if the total value is more than 40,000
+        const totalValue=value.reduce((acc,item)=>{
+            return acc+Number(item.purchasePrice)
+        },0)
+    
+        if(totalValue+Number(theValue) > 40000)return alert("Items total value can't exceed 40,000");
+        
+        
         const itemToAdd={
             "id": uuidv4(),
 	       "name": theName,
-            "purchasePrice": theValue,
+            "purchasePrice": Number(theValue),
             "type": "MUSIC_INSTRUMENT",
             "photo": selectedImage.localUri,
       }
@@ -186,6 +198,5 @@ const styles = StyleSheet.create({
 });
 
 //change add photo to 'change photo'
-//limit the amout of euros
 //select options
 //icons
