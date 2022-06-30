@@ -20,13 +20,15 @@ const Valuables=({navigation})=>{
     }
     
    return(
-    <SafeAreaView >
+    <SafeAreaView style={styles.mainContainer}>
        <View>
         <Text>Invertory</Text>
-        <TouchableHighlight onPress={()=>navigation.navigate('Add to Valuables')}>
-            <Text>u</Text>
-        </TouchableHighlight>
+        
        </View>
+       
+       <TouchableHighlight style={styles.addBtn} onPress={()=>navigation.navigate('Add to Valuables')}>
+            <Text style={styles.plus}>+</Text>
+        </TouchableHighlight>
     
     <View style={styles.itemsContainer}>
      <FlatList
@@ -43,6 +45,11 @@ const Valuables=({navigation})=>{
 export default Valuables;
 
 const styles=StyleSheet.create({
+    mainContainer:{
+        marginTop:50,
+        paddingHorizontal:20,
+        flex:1
+    },
     itemsContainer:{
         flexDirection:'row',
         justifyContent:'space-between',
@@ -66,5 +73,18 @@ const styles=StyleSheet.create({
     imageContainer:{
         height:160,
         width:'100%'
+    },
+    addBtn:{
+        position:'fixed',
+        bottom: 100,
+        right:30,
+        padding:22,
+        backgroundColor:'blue',
+        borderRadius:170
+    },
+    plus:{
+        color:'white',
+        fontSize:20,
+        fontWeight:'bold'
     }
 })
