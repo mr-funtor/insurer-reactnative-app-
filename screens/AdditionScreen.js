@@ -74,7 +74,7 @@ export default function AdditionScreen({navigation}) {
             "id": uuidv4(),
 	       "name": theName,
             "purchasePrice": Number(theValue),
-            "type": "MUSIC_INSTRUMENT",
+            "type": "ELECTRONICS",
             "photo": selectedImage.localUri,
       }
         

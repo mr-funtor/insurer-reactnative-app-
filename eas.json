@@ -3,12 +3,12 @@
     "version": ">= 0.54.1"
   },
   "build": {
-    "preview": {
+    "InsureApp": {
       "android": {
         "buildType": "apk"
       }
     },
-    "preview2": {
+    "InsureApp2": {
       "android": {
         "gradleCommand": ":app:assembleRelease"
       }

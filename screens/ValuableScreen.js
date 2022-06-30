@@ -20,9 +20,9 @@ const Valuables=({navigation})=>{
     }
     
    return(
-    <SafeAreaView style={styles.mainContainer}>
+    <View style={styles.mainContainer}>
        <View>
-        <Text>Invertory</Text>
+        <Text style={{fontSize:20,fontWeight:'bold'}}>Inventory</Text>
         
        </View>
        
@@ -30,15 +30,15 @@ const Valuables=({navigation})=>{
             <Text style={styles.plus}>+</Text>
         </TouchableHighlight>
     
-    <View style={styles.itemsContainer}>
-     <FlatList
-        horizontal={false}
-       numColumns={2}
-       data={value}
-       renderItem={renderValue}/>
-    </View>
+        <View style={styles.itemsContainer}>
+         <FlatList
+            horizontal={false}
+           numColumns={2}
+           data={value}
+           renderItem={renderValue}/>
+        </View>
     
-    </SafeAreaView>
+    </View>
    ) 
 }
 
@@ -78,9 +78,13 @@ const styles=StyleSheet.create({
         position:'fixed',
         bottom: 100,
         right:30,
-        padding:22,
         backgroundColor:'blue',
-        borderRadius:170
+        borderRadius:190,
+        height:50,
+        width:50,
+        display:'flex',
+        alignItems:'center',
+        justifyContent:'center'
     },
     plus:{
         color:'white',

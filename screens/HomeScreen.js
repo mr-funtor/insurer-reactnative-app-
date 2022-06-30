@@ -6,10 +6,18 @@ const Home=({navigation})=>{
    
     
    return(
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
      <Text>Home</Text>
     </SafeAreaView>
    ) 
 }
 
 export default Home;
+
+const styles = StyleSheet.create({
+    container:{
+        flex:1,
+        alignItems:'center',
+        justifyContent:'center'
+    }
+})
