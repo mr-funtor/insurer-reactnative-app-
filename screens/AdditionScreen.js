@@ -111,7 +111,7 @@ export default function AdditionScreen({navigation}) {
         </View>
 
         <View style={styles.actionBox}>
-            <Button title="add photo" onPress={openImagePickerAsync}/>
+            <Button title={!selectedImage ? 'add photo' : 'change photo'} onPress={openImagePickerAsync}/>
             <Button title="camera" onPress={openCamera}/>
         </View>
 
@@ -197,6 +197,4 @@ const styles = StyleSheet.create({
     }
 });
 
-//change add photo to 'change photo'
-//select options
-//icons
+
