@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
         maxWidth: 223,
         height: 234,
         maxHeight:234,
-        marginHorizontal:10,
+        marginRight:10,
         marginBottom:20
     },
     theImage:{

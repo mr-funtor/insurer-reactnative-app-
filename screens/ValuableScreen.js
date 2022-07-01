@@ -1,4 +1,4 @@
-import { StyleSheet, Text, SafeAreaView, View,Button,FlatList,TouchableHighlight,Image } from 'react-native';
+import { StyleSheet, Text, SafeAreaView, View,Button,FlatList,TouchableHighlight,Image,TouchableWithoutFeedback } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux'
 
 //components
@@ -17,21 +17,22 @@ const Valuables=({navigation})=>{
    return(
     <View style={styles.mainContainer}>
        <View>
-        <Text style={{fontSize:20,fontWeight:'bold'}}>Inventory</Text>
+        <Text style={styles.inventory}>Inventory</Text>
         
        </View>
        
-       <TouchableHighlight style={styles.addBtn} onPress={()=>navigation.navigate('Add to Valuables')}>
-            <Text style={styles.plus}>+</Text>
-        </TouchableHighlight>
-    
-        <View style={styles.itemsContainer}>
+       
+        <TouchableWithoutFeedback style={styles.itemsContainer}>
          <FlatList
             horizontal={false}
            numColumns={2}
            data={value}
            renderItem={renderValue}/>
-        </View>
+        </TouchableWithoutFeedback>
+       
+       <TouchableHighlight style={styles.addBtn} onPress={()=>navigation.navigate('Add to Valuables')}>
+            <Text style={styles.plus}>+</Text>
+        </TouchableHighlight>
     
     </View>
    ) 
@@ -45,15 +46,14 @@ const styles=StyleSheet.create({
         paddingHorizontal:20,
         flex:1
     },
-    itemsContainer:{
-        flexDirection:'row',
-        justifyContent:'space-between',
-        flexWrap:'wrap',
-        marginTop:20,
+    inventory:{
+        fontSize:20,
+        fontWeight:'bold',
+        marginBottom:10
     },
     addBtn:{
-        position:'fixed',
-        bottom: 100,
+        position:'absolute',
+        bottom: 40,
         right:30,
         backgroundColor:'blue',
         borderRadius:190,
